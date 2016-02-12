@@ -28,7 +28,7 @@ func main() {
 	var countValidResults, totalTemp, minTemp, maxTemp float64
 	needInitialValue := true
 
-	for i := 0; i < len(apis); i++ {
+	for _ = range apis {
 		result := <-ch
 		fmt.Println(result)
 
