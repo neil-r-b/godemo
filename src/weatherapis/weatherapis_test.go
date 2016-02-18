@@ -27,8 +27,12 @@ func TestMockGetWeather(t *testing.T) {
 		t.Error("wr.GetError should have value")
 	}
 
+	if wr.GetError().Error() != "Testing API" {
+		t.Errorf("Expected 'Testing API' but got %s", wr.GetError().Error())
+	}
+
 	if wr.GetTemp() != 50 {
-		t.Error("wr.GetTemp() does not equal 50")
+		t.Errorf("Expected Temp = '50' but got %s", wr.GetTemp())
 	}
 
 	expected := "Error with Mock Weather API: Testing API"
